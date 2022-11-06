@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Prompt:wght@900&display=swap');
+
+
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: linear-gradient( 90deg,#E8574F 50% , #f0f0f0 50%);
+  background-size: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  position: absolute;
+  top: 0.7%;
+  left: 2%;
+  color: #f0f0f0;
+  margin-top: 10px; 
+  font-family: 'Prompt', sans-serif;
+  font-size: 50px;
+} 
+
+.search-bar {
+  position: absolute;
+  display: flex;
+  width: 400px;
+  background-color: rgb(0,0,0,0.1);
+  color: rgb(255,255,255);
+  top: 5%;
+  left: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: 'manrope', sans-serif;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.search-bar:active {
+  border-color: aqua;
+}
+
+.search-bar::placeholder {
+  color: rgba(255,255,255,0.8)
+}
+
+.search-list {
+  position: fixed;
+  left: 40.2%;
+  margin-top: 4.4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.search-name {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: rgb(0,0,0, 0.5);
+  padding: 5px;
+  text-align: center;
+  color: rgb(255,255,255);
+  width: 300px;
+  filter: blur(100%);
+  border-radius: 10px;
+}
+
+.search-name:hover {
+  font-weight: bolder;
+  color: black;
+  background-color: rgb(255,255,255);
+}
+
+.pokemon-details {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  width: 550px;
+  height: 550px;
+  background-color: rgb(232, 87, 79, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  justify-content: center;
+  align-items: center;
+  border: 20px solid;
+  border-radius: 50%;
+}
+
+.img {
+  z-index: 1;
+  height: 500px;
+  width: 500px;
+  transition: 0.5s;
+}
+
+.img:hover {
+  scale: 1.05;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 550px;
+  height: 550px;
+  background-color: rgb(240, 240, 240);
+  border: 5px solid;
+  border-radius: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  list-style: none;
+}
+
+
+.card .icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  width: 300px;
+  opacity: 0.2;
+}
+
+.icon {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  opacity: 0.7;
+}
+
+.buttons {
+  margin-top: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+  width: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.btn:active {
+  scale: (0.9);
+}
+
+.btn1 {
+  color: #E8574F;
+  background-color: #f0f0f0;
+}
+
+.btn2 {
+  color: #f0f0f0;
+  background-color: #E8574F;
+}
+
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Prompt', sans-serif;
+  margin-top: 15%;
+}
+
+.loading-container img {
+  height: 100px;
+  width: 75px;
+} 
+
+.poke-name {
+  background-color: #E8574F;
+  color: #f0f0f0;
+  margin-top: 30px;
+  text-align: center;
+  width: 80%;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 30px;
+  font-family: 'Prompt', sans-serif;
+  letter-spacing: 1px;
+}
+
+.type , .height , .weight , .abilities {
+  color: black;
+  width: 40%;
+  margin-top: 30px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;  
+}
+
+
+.type-name, .height-value, .weight-value, .move-names{
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+}
+
